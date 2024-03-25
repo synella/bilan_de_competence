@@ -1,0 +1,11 @@
+.Objects{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 70%;
+    width: 80%;
+    border-radius: 10px;
+}

@@ -1,0 +1,40 @@
+.Scene {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* text-align: center; */
+  background-image: url("./hidden_game.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+.Bob_thoughtful {
+  position: fixed;
+  border-radius: 50%;
+  top: 750px;
+  left: 70px;
+}
+
+
+.Bob_thoughtful:hover {
+  cursor: pointer;
+  border: 3px solid white;
+}
+
+.Help{
+  position: fixed;
+  left: 300px;
+  bottom: 80px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+}
+
+.Found{
+  position:fixed;
+  right: 685px;
+  bottom: 390px;
+}

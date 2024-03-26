@@ -4,7 +4,7 @@
   /* align-items: center; */
   /* text-align: center; */
   background-image: url("./hidden_game.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
@@ -13,17 +13,16 @@
 .Bob_thoughtful {
   position: fixed;
   border-radius: 50%;
-  top: 750px;
-  left: 70px;
+  top: 80%;
+  left: 5%;
 }
-
 
 .Bob_thoughtful:hover {
   cursor: pointer;
   border: 3px solid white;
 }
 
-.Help{
+.Help {
   position: fixed;
   left: 300px;
   bottom: 80px;
@@ -33,8 +32,14 @@
   padding: 10px;
 }
 
-.Found{
-  position:fixed;
-  right: 685px;
-  bottom: 390px;
+.cup {
+  position: fixed;
+  right: 40%;
+  bottom: 39%;
+}
+
+.telephone {
+  position: fixed;
+  right: 81%;
+  bottom: 34%;
 }

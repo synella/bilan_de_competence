@@ -46,6 +46,7 @@ function Scene() {
     setOpenBackdropFound(true);
   };
 
+
   return (
     <div className="Scene">
       <Backdrop

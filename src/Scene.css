@@ -15,11 +15,14 @@
   border-radius: 50%;
   top: 80%;
   left: 5%;
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .Bob_thoughtful:hover {
   cursor: pointer;
-  border: 3px solid white;
+  /* border: 3px solid white; */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .Help {
@@ -30,6 +33,11 @@
   border-radius: 10px;
   color: black;
   padding: 10px;
+}
+
+.close-object-preview-backdrop {
+  position: fixed;
+  bottom: 34.5%;
 }
 
 .cup {
@@ -60,16 +68,16 @@
 }
 
 .books {
-  position: fixed;  
+  position: fixed;
   right: 18%;
   bottom: 3%;
   width: 4%;
   height: 12%;
-  opacity: 10%; 
+  opacity: 10%;
 }
 
-.books2{
-  position: fixed;  
+.books2 {
+  position: fixed;
   left: 23%;
   bottom: 35%;
   width: 7%;
@@ -77,8 +85,8 @@
   opacity: 10%;
 }
 
-.files{
-  position: fixed;  
+.files {
+  position: fixed;
   left: 17%;
   bottom: 1.5%;
   width: 5%;
@@ -86,8 +94,8 @@
   opacity: 10%;
 }
 
-.glasses{
-  position: fixed;  
+.glasses {
+  position: fixed;
   left: 35%;
   bottom: 3.5%;
   width: 7%;
@@ -95,8 +103,8 @@
   opacity: 10%;
 }
 
-.mug{
-  position: fixed;  
+.mug {
+  position: fixed;
   right: 20%;
   top: 15%;
   width: 3%;
@@ -104,8 +112,8 @@
   opacity: 5%;
 }
 
-.notebook{
-  position: fixed;  
+.notebook {
+  position: fixed;
   right: 20%;
   bottom: 20%;
   width: 3%;

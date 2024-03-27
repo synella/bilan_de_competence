@@ -169,7 +169,12 @@ function Scene() {
         files
       </button>
 
-      <img src="./objects/glasses.png" className="glasses" onClick={() => handleClick("glasses")}/>
+      <img
+        src="./objects/glasses.png"
+        className="glasses"
+        onClick={() => handleClick("glasses")}
+        alt="glasses"
+      />
 
       <button className="mug" onClick={() => handleClick("mug")}>
         mug
@@ -182,9 +187,12 @@ function Scene() {
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={openBackdropFound}
-        onClick={handleClose}
+        // onClick={handleClose}
       >
         <ObjectPreview objectTitle={objectTitle} found={found} />
+        <button className="close-object-preview-backdrop" onClick={handleClose}>
+          Fermer
+        </button>
       </Backdrop>
 
       <img

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 
-function Objects({ objectTitle, number }) {
+function Objects({ objectTitle }) {
   const [unfound, setUnfound] = useState([
     {
       img: "./objects/books.png",

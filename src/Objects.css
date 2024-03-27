@@ -1,11 +1,21 @@
-.Objects{
-    display: grid;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 70%;
-    width: 80%;
-    border-radius: 10px;
+.Objects {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 70%;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.object-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.01s ease-in-out;
+  cursor: pointer;
+}
+
+.object-list {
+  text-align: center;
 }

@@ -160,12 +160,9 @@ function Scene() {
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={openBackdropFound}
-        // onClick={handleClose}
+        onClick={handleClose}
       >
         <ObjectPreview objectTitle={objectTitle} found={found} />
-        <button className="close" onClick={handleClose}>
-          Fermer
-        </button>
       </Backdrop>
 
       <img

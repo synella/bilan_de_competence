@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
+import Backdrop from "@mui/material/Backdrop";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import "./Objects.css";
 
 function Objects({ found, unfound }) {
 
-  const handleClick = () => {
-    console.log("click");
-    
+  const [openBackdrop, setOpenBackdrop] = useState(false);
+
+
+  const handleClose = () => {
+    setOpenBackdrop(false);
   };
+
+  const handleClick = () => {
+    setOpenBackdrop(true);
+  };
+
 
   return (
     <div className="object-list">
@@ -47,6 +55,17 @@ function Objects({ found, unfound }) {
           </ImageListItem>
         ))}
       </ImageList>
+
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={openBackdrop}
+        onClick={handleClose}
+      >
+        <div className="Help">
+          <p>oui</p>
+        </div>
+      </Backdrop>
+
     </div>
   );
 }

@@ -157,6 +157,28 @@ function Scene() {
         wallet
       </button>
 
+      <button className="books" onClick={() => handleClick("books")}>
+        books
+      </button>
+
+      <button className="books2" onClick={() => handleClick("books2")}>
+        books_rose
+      </button>
+
+      <button className="files" onClick={() => handleClick("files")}>
+        files
+      </button>
+
+      <img src="./objects/glasses.png" className="glasses" onClick={() => handleClick("glasses")}/>
+
+      <button className="mug" onClick={() => handleClick("mug")}>
+        mug
+      </button>
+
+      <button className="notebook" onClick={() => handleClick("notebook")}>
+        notebook
+      </button>
+
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={openBackdropFound}

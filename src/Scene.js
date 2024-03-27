@@ -28,10 +28,6 @@ function Scene() {
     };
   }, [navigate]);
 
-  // const handleOpen = () => {
-  //   setOpenBackdrop(true);
-  // };
-
   const handleClose = () => {
     setOpenBackdrop(false);
     setOpenBackdropFound(false);

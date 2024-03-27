@@ -4,10 +4,21 @@ import Drawer from "@mui/material/Drawer";
 import Objects from "./Objects";
 import Backdrop from "@mui/material/Backdrop";
 import ObjectPreview from "./ObjectPreview";
+import Badge from "@mui/material/Badge";
+import Button from "@mui/material/Button";
+import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
+import Close from "@mui/icons-material/Close";
+import { ClickAwayListener } from "@mui/base/ClickAwayListener";
+
+import { Tooltip } from "@mui/material";
+import { tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
 
 function Scene() {
   const [open, setOpen] = useState(false);
+  const [openTooltip, setOpenTooltip] = useState(true);
+  const [badgeContentValue, setBadgeContentValue] = useState(0);
   const [openBackdrop, setOpenBackdrop] = useState(true);
   const [objectTitle, setObjectTitle] = useState("");
   const [openBackdropFound, setOpenBackdropFound] = useState(false);
@@ -57,6 +68,10 @@ function Scene() {
       title: "plant",
     },
     {
+      img: "./objects/mug.png",
+      title: "mug",
+    },
+    {
       img: "./objects/rug.png",
       title: "rug",
     },
@@ -84,6 +99,20 @@ function Scene() {
   const [found, setFound] = useState([]);
   const navigate = useNavigate();
 
+  
+  const LightTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: theme.palette.common.white,
+      color: "rgba(0, 0, 0, 0.87)",
+      boxShadow: theme.shadows[1],
+      fontSize: 16,
+      width: "100%", // Modify the width here
+      height: "100px", // Modify the height here
+    },
+  }));
+
   useEffect(() => {
     const handleRefresh = () => {
       if (performance.navigation.type === 1) {
@@ -98,6 +127,10 @@ function Scene() {
     };
   }, [navigate]);
 
+  const handleCloseTooltip = () => {
+    setOpenTooltip(false);
+  };
+
   const handleClose = () => {
     setOpenBackdrop(false);
     setOpenBackdropFound(false);
@@ -105,10 +138,12 @@ function Scene() {
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
+    setBadgeContentValue(0);
   };
 
   const handleClick = (title) => {
     setObjectTitle(title);
+    setBadgeContentValue(badgeContentValue + 1);
     const objectIndex = unfound.findIndex((item) => item.title === title);
     setOpenBackdropFound(true);
     if (objectIndex !== -1) {
@@ -125,10 +160,9 @@ function Scene() {
 
   return (
     <div className="Scene">
-      <Backdrop
+      {/* <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={openBackdrop}
-        onClick={handleClose}
       >
         <div className="Help">
           <p>
@@ -136,8 +170,15 @@ function Scene() {
             moi pour visualiser les objets et leurs contenus.
           </p>
           <p>Je suis juste en bas à gauche. Bonne chance !</p>
+          <Button
+            variant="text"
+            className="close-help-backdrop"
+            onClick={handleClose}
+          >
+            OK
+          </Button>
         </div>
-      </Backdrop>
+      </Backdrop> */}
 
       {/* <button className="cup" onClick={() => handleClick("cup")} style={{ display: found.some(item => item.title === "cup") ? "none" : "block" }}>
         cup
@@ -187,21 +228,42 @@ function Scene() {
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={openBackdropFound}
-        // onClick={handleClose}
       >
         <ObjectPreview objectTitle={objectTitle} found={found} />
-        <button className="close-object-preview-backdrop" onClick={handleClose}>
-          Fermer
-        </button>
+        <CloseIcon className="close-icon" onClick={handleClose} />
       </Backdrop>
 
-      <img
-        src="Bob_thoughful.png"
-        className="Bob_thoughtful"
-        width="10%"
-        alt="arrow"
-        onClick={toggleDrawer(true)}
-      />
+      <Badge
+        badgeContent={badgeContentValue}
+        sx={{
+          ".MuiBadge-badge": { backgroundColor: "#f44336", color: "#ffffff" },
+        }}
+        className="bob-badge"
+      >
+        <ClickAwayListener onClickAway={handleCloseTooltip}>
+          <LightTooltip
+            open={openTooltip}
+            title={
+              <p>
+                Je ne sais pas comment vous remercier ! N'hésitez pas à revenir
+                vers moi pour visualiser les objets à trouver ainsi que leurs
+                contenus. Bonne chance !
+              </p>
+            }
+            // className="bob-tooltip"
+            placement="right"
+            arrow
+          >
+            <img
+              src="Bob_thoughful.png"
+              className="Bob_thoughtful"
+              width="10%"
+              alt="arrow"
+              onClick={toggleDrawer(true)}
+            />
+          </LightTooltip>
+        </ClickAwayListener>
+      </Badge>
 
       <Drawer open={open} onClose={toggleDrawer(false)}>
         <Objects found={found} unfound={unfound} />

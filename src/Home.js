@@ -1,6 +1,7 @@
 import './Home.css'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function Home() {
 
@@ -20,9 +21,9 @@ function Home() {
           <p>Bonjour ! Vous tombez bien</p>
         </div>
         <div className='Text'>
-          <button className='Button' onClick={handleClick}>
+          <Button className='Button' onClick={handleClick}>
             C'est parti
-          </button>
+          </Button>
         </div>
       </div>
     </div>

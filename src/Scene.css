@@ -25,6 +25,17 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
+.bob-badge {
+  position: fixed;
+  top: 80%;
+  right: 37%;
+}
+
+.bob-tooltip .MuiTooltip-tooltip{
+  background-color: white !important;
+  width : 200px !important;
+}
+
 .Help {
   position: fixed;
   left: 300px;
@@ -39,6 +50,21 @@
   position: fixed;
   bottom: 34.5%;
 }
+
+.close-icon {
+  position: fixed;
+  color: black;
+  right: 40%;
+  top: 34.5%;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+}
+
+/* .message-tootip {
+  background-color: white;
+} */
 
 .cup {
   position: fixed;

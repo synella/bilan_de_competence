@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Scene.css";
-import Finish from "./Finish";
-import Home from "./Home";
 import Drawer from "@mui/material/Drawer";
 import Objects from "./Objects";
 import Backdrop from "@mui/material/Backdrop";
 import ObjectPreview from "./ObjectPreview";
 import Badge from "@mui/material/Badge";
 import CloseIcon from "@mui/icons-material/Close";
-import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { ClickAwayListener } from "@mui/base/ClickAwayListener";
 import { Tooltip } from "@mui/material";

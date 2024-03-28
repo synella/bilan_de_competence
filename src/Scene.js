@@ -440,6 +440,7 @@ function Scene() {
             onClick={handleCloseFinishBackdrop}
           >
             <div className="finished">
+              <img src="./Bob_happy.png" width="40%" alt="bob_happy" />
               <p> Bravo ! Vous avez trouvé tous les objets !</p>
               <p>
                 Vous pouvez revenir en cliquant n'importe où ou alors

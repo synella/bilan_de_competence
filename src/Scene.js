@@ -389,8 +389,10 @@ function Scene() {
           sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
           open={openBackdropFound}
         >
-          <ObjectPreview objectTitle={objectTitle} found={found} />
-          <CloseIcon className="close-icon" onClick={handleClose} />
+          <div className="object-preview-backdrop">
+            <ObjectPreview objectTitle={objectTitle} found={found} />
+            <CloseIcon className="close-icon" onClick={handleClose} />
+          </div>
         </Backdrop>
         <Badge
           badgeContent={badgeContentValue}
@@ -439,7 +441,10 @@ function Scene() {
           >
             <div className="finished">
               <p> Bravo ! Vous avez trouvé tous les objets !</p>
-              <p>Vous pouvez revenir en cliquant n'importe où ou alors recommencer en rafraîchissant la page</p>
+              <p>
+                Vous pouvez revenir en cliquant n'importe où ou alors
+                recommencer en rafraîchissant la page
+              </p>
             </div>
           </Backdrop>
         ) : null}

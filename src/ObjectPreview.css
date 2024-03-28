@@ -1,9 +1,9 @@
 .ObjectPreview {
-  position: fixed;
-  background-color: white;
-  width: 20%;
-  border-radius: 10px;
+  /* position: fixed; */
+  /* background-color: white; */
+  /* width: 20%; */
+  border-radius: 20px;
   color: black;
-  padding: 10px;
-  padding-bottom: 20px;
+  /* padding: 20px; */
+  /* padding-bottom: 20px;  */
 }

@@ -5,9 +5,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import "./Objects.css";
 
 function Objects({ found, unfound }) {
-
   const [openBackdrop, setOpenBackdrop] = useState(false);
-
 
   const handleClose = () => {
     setOpenBackdrop(false);
@@ -17,7 +15,6 @@ function Objects({ found, unfound }) {
     setOpenBackdrop(true);
   };
 
-
   return (
     <div className="object-list">
       <h2>Objets à trouver</h2>
@@ -25,13 +22,13 @@ function Objects({ found, unfound }) {
         sx={{
           width: 300,
           height: 1000,
-          overflow: "hidden", 
+          overflow: "hidden",
           "&::-webkit-scrollbar": {
             display: "none",
           },
         }}
         cols={2}
-        rowHeight={164}
+        rowHeight={50}
       >
         {found.map((item) => (
           <ImageListItem key={item.img}>
@@ -41,6 +38,7 @@ function Objects({ found, unfound }) {
               className="object-image"
               alt={item.title}
               onClick={handleClick}
+              draggable="false"
             />
           </ImageListItem>
         ))}
@@ -65,7 +63,6 @@ function Objects({ found, unfound }) {
           <p>oui</p>
         </div>
       </Backdrop>
-
     </div>
   );
 }

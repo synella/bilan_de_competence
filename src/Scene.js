@@ -5,21 +5,15 @@ import Objects from "./Objects";
 import Backdrop from "@mui/material/Backdrop";
 import ObjectPreview from "./ObjectPreview";
 import Badge from "@mui/material/Badge";
-import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
-import Close from "@mui/icons-material/Close";
 import { ClickAwayListener } from "@mui/base/ClickAwayListener";
-
 import { Tooltip } from "@mui/material";
-import { tooltipClasses } from "@mui/material/Tooltip";
-import { styled } from "@mui/material/styles";
 
 function Scene() {
   const [open, setOpen] = useState(false);
   const [openTooltip, setOpenTooltip] = useState(true);
   const [badgeContentValue, setBadgeContentValue] = useState(0);
-  const [openBackdrop, setOpenBackdrop] = useState(true);
   const [objectTitle, setObjectTitle] = useState("");
   const [openBackdropFound, setOpenBackdropFound] = useState(false);
   const [unfound, setUnfound] = useState([
@@ -154,109 +148,126 @@ function Scene() {
         className="cup"
         onClick={() => handleClick("cup")}
         alt="cup"
+        draggable="false"
       />
       <img
         src="./objects/telephone.png"
         className="telephone"
         onClick={() => handleClick("telephone")}
         alt="telephone"
+        draggable="false"
       />
       <img
         src="./objects/vase.png"
         className="vase"
         onClick={() => handleClick("vase")}
         alt="vase"
+        draggable="false"
       />
       <img
         src="./objects/wallet.png"
         className="wallet"
         onClick={() => handleClick("wallet")}
         alt="wallet"
+        draggable="false"
       />
-      s
       <img
         src="./objects/books.png"
         className="books"
         onClick={() => handleClick("books")}
         alt="books"
+        draggable="false"
       />
       <img
         src="./objects/books2.png"
         className="books2"
         onClick={() => handleClick("books2")}
         alt="books2"
+        draggable="false"
       />
       <img
         src="./objects/files.png"
         className="files"
         onClick={() => handleClick("files")}
         alt="files"
+        draggable="false"
       />
       <img
         src="./objects/glasses.png"
         className="glasses"
         onClick={() => handleClick("glasses")}
         alt="glasses"
+        draggable="false"
       />
       <img
         src="./objects/notebook.png"
         className="notebook"
         onClick={() => handleClick("notebook")}
         alt="notebook"
+        draggable="false"
       />
       <img
         src="./objects/notebook2.png"
         className="notebook2"
         onClick={() => handleClick("notebook2")}
         alt="notebook2"
+        draggable="false"
       />
       <img
         src="./objects/notebook3.png"
         className="notebook3"
         onClick={() => handleClick("notebook3")}
         alt="notebook3"
+        draggable="false"
       />
       <img
         src="./objects/penBox.png"
         className="penBox"
         onClick={() => handleClick("penBox")}
         alt="penBox"
+        draggable="false"
       />
       <img
         src="./objects/pencils.png"
         className="pencils"
         onClick={() => handleClick("pencils")}
         alt="pencils"
+        draggable="false"
       />
       <img
         src="./objects/plant.png"
         className="plant"
         onClick={() => handleClick("plant")}
         alt="plant"
+        draggable="false"
       />
       <img
         src="./objects/rug.png"
         className="rug"
         onClick={() => handleClick("rug")}
         alt="rug"
+        draggable="false"
       />
       <img
         src="./objects/sheets.png"
         className="sheets"
         onClick={() => handleClick("sheets")}
         alt="sheets"
+        draggable="false"
       />
       <img
         src="./objects/sheets2.png"
         className="sheets2"
         onClick={() => handleClick("sheets2")}
         alt="sheets2"
+        draggable="false"
       />
       <img
         src="./objects/mug.png"
         className="mug"
         onClick={() => handleClick("mug")}
         alt="mug"
+        draggable="false"
       />
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -293,6 +304,7 @@ function Scene() {
               width="10%"
               alt="arrow"
               onClick={toggleDrawer(true)}
+              draggable="false"
             />
           </Tooltip>
         </ClickAwayListener>

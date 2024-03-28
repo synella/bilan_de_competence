@@ -6,7 +6,6 @@ import Button from "@mui/material/Button";
 function ObjectPreview({ found, objectTitle }) {
   const [openBackdrop, setOpenBackdrop] = useState(false);
   const item = found.find((item) => item.title === objectTitle);
-  console.log(item);
 
   const handleClose = () => {
     setOpenBackdrop(false);

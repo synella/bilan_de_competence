@@ -66,6 +66,18 @@
   background-color: white;
 } */
 
+.finished {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: white;
+  border-radius: 10px;
+  width: 30%;
+  height: 20%;
+}
+
 .cup {
   position: fixed;
   right: 40.3%;

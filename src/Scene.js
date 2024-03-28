@@ -8,109 +8,112 @@ import Backdrop from "@mui/material/Backdrop";
 import ObjectPreview from "./ObjectPreview";
 import Badge from "@mui/material/Badge";
 import CloseIcon from "@mui/icons-material/Close";
+import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { ClickAwayListener } from "@mui/base/ClickAwayListener";
 import { Tooltip } from "@mui/material";
 
 function Scene() {
   const [open, setOpen] = useState(false);
+  const [openFinishBackdrop, setOpenFinishBackdrop] = useState(true);
   const [openTooltip, setOpenTooltip] = useState(true);
   const [badgeContentValue, setBadgeContentValue] = useState(0);
   const [objectTitle, setObjectTitle] = useState("");
   const [openBackdropFound, setOpenBackdropFound] = useState(false);
   const [unfound, setUnfound] = useState([
-    {
-      img: "./objects/books.png",
-      title: "books",
-      candidat: "./candidats/achille_attentes.png",
-    },
-    {
-      img: "./objects/books2.png",
-      title: "books2",
-      candidat: "",
-    },
+    // {
+    //   img: "./objects/books.png",
+    //   title: "books",
+    //   candidat: "./candidats/achille_attentes.png",
+    // },
+    // {
+    //   img: "./objects/books2.png",
+    //   title: "books2",
+    //   candidat: "",
+    // },
     {
       img: "./objects/cup.png",
       title: "cup",
       candidat: "./candidats/achille_centre.png",
     },
-    {
-      img: "./objects/files.png",
-      title: "files",
-      candidat: "",
-    },
-    {
-      img: "./objects/glasses.png",
-      title: "glasses",
-      candidat: "",
-    },
-    {
-      img: "./objects/penBox.png",
-      title: "penBox",
-      candidat: "",
-    },
-    {
-      img: "./objects/notebook.png",
-      title: "notebook",
-      candidat: "",
-    },
-    {
-      img: "./objects/notebook2.png",
-      title: "notebook2",
-      candidat: "",
-    },
-    {
-      img: "./objects/notebook3.png",
-      title: "notebook3",
-      candidat: "./candidats/achille_itineraire.png",
-    },
-    {
-      img: "./objects/pencils.png",
-      title: "pencils",
-      candidat: "",
-    },
-    {
-      img: "./objects/plant.png",
-      title: "plant",
-      candidat: "",
-    },
-    {
-      img: "./objects/mug.png",
-      title: "mug",
-      candidat: "./candidats/achille_traits.png",
-    },
-    {
-      img: "./objects/rug.png",
-      title: "rug",
-      candidat: "",
-    },
-    {
-      img: "./objects/sheets.png",
-      title: "sheets",
-      candidat: "./candidats/achille_compe.png",
-    },
-    {
-      img: "./objects/sheets2.png",
-      title: "sheets2",
-      candidat: "",
-    },
+    // {
+    //   img: "./objects/files.png",
+    //   title: "files",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/glasses.png",
+    //   title: "glasses",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/penBox.png",
+    //   title: "penBox",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/notebook.png",
+    //   title: "notebook",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/notebook2.png",
+    //   title: "notebook2",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/notebook3.png",
+    //   title: "notebook3",
+    //   candidat: "./candidats/achille_itineraire.png",
+    // },
+    // {
+    //   img: "./objects/pencils.png",
+    //   title: "pencils",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/plant.png",
+    //   title: "plant",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/mug.png",
+    //   title: "mug",
+    //   candidat: "./candidats/achille_traits.png",
+    // },
+    // {
+    //   img: "./objects/rug.png",
+    //   title: "rug",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/sheets.png",
+    //   title: "sheets",
+    //   candidat: "./candidats/achille_compe.png",
+    // },
+    // {
+    //   img: "./objects/sheets2.png",
+    //   title: "sheets2",
+    //   candidat: "",
+    // },
     {
       img: "./objects/telephone.png",
       title: "telephone",
       candidat: "./candidats/achille_cv.png",
     },
-    {
-      img: "./objects/vase.png",
-      title: "vase",
-      candidat: "",
-    },
-    {
-      img: "./objects/wallet.png",
-      title: "wallet",
-      candidat: "",
-    },
+    // {
+    //   img: "./objects/vase.png",
+    //   title: "vase",
+    //   candidat: "",
+    // },
+    // {
+    //   img: "./objects/wallet.png",
+    //   title: "wallet",
+    //   candidat: "",
+    // },
   ]);
   const [found, setFound] = useState([]);
+  const [unfoundLength, setUnfoundLength] = useState(unfound.length);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -127,15 +130,17 @@ function Scene() {
     };
   }, [navigate]);
 
+  const handleCloseFinishBackdrop = () => {
+    setOpenFinishBackdrop(false);
+  };
+
   const handleCloseTooltip = () => {
     setOpenTooltip(false);
   };
 
   const handleClose = () => {
     setOpenBackdropFound(false);
-    if (unfound.length === 0) {
-      navigate("/Home");
-    }
+    setUnfoundLength(unfound.length);
   };
 
   const toggleDrawer = (newOpen) => () => {
@@ -145,7 +150,11 @@ function Scene() {
 
   const handleClick = (title) => {
     setObjectTitle(title);
-    setBadgeContentValue(badgeContentValue + 1);
+    if (unfoundLength === 1) {
+      setBadgeContentValue(0);
+    } else {
+      setBadgeContentValue(badgeContentValue + 1);
+    }
     const objectIndex = unfound.findIndex((item) => item.title === title);
     setOpenBackdropFound(true);
     if (objectIndex !== -1) {
@@ -187,7 +196,7 @@ function Scene() {
               : "block",
           }}
         />
-        <img
+        {/* <img
           src="./objects/vase.png"
           className="vase"
           onClick={() => handleClick("vase")}
@@ -378,7 +387,7 @@ function Scene() {
               ? "none"
               : "block",
           }}
-        />
+        /> */}
         <Backdrop
           sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
           open={openBackdropFound}
@@ -425,6 +434,18 @@ function Scene() {
         <Drawer open={open} onClose={toggleDrawer(false)}>
           <Objects found={found} unfound={unfound} />
         </Drawer>
+
+        {unfoundLength === 0 ? (
+          <Backdrop
+            open={openFinishBackdrop}
+            onClick={handleCloseFinishBackdrop}
+          >
+            <div className="finished">
+              <p> Bravo ! Vous avez trouvé tous les objets !</p>
+              <p>Vous pouvez revenir en cliquant n'importe où ou alors recommencer en rafraîchissant la page</p>
+            </div>
+          </Backdrop>
+        ) : null}
       </>
     </div>
   );

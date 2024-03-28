@@ -410,9 +410,8 @@ function Scene() {
               title={
                 <span style={{ fontSize: "20px" }}>
                   <p>
-                    Je ne sais pas comment vous remercier ! N'hésitez pas à
-                    revenir vers moi pour visualiser les objets à trouver ainsi
-                    que leurs contenus. Bonne chance !
+                    Parfait, je compte sur vous alors ! Cliquez ici pour visualiser les objets à trouver ainsi que
+                    leurs contenus. Vous pouvez aussi examiner l'objet de plus près lorsque vous l'avez trouvé. Bonne chance !
                   </p>
                 </span>
               }
@@ -441,9 +440,14 @@ function Scene() {
           >
             <div className="finished">
               <img src="./Bob_happy.png" width="40%" alt="bob_happy" />
-              <p> Bravo ! Vous avez trouvé tous les objets !</p>
               <p>
-                Vous pouvez revenir en cliquant n'importe où ou alors
+                {" "}
+                Super ! Vous avez trouvé tous les objets ! Grâce à vous, nos
+                entretiens d'embauche vont enfin pouvoir se dérouler sans
+                accroc. Vous avez sauvé la journée, voire même la semaine !
+              </p>
+              <p>
+                Vous pouvez revenir en cliquant n'importe où, ou alors
                 recommencer en rafraîchissant la page
               </p>
             </div>

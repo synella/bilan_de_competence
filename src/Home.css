@@ -1,28 +1,29 @@
-.Home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url('./blured.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+.Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("./blured.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
 }
 
 .Popup {
-    display: grid;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 70%;
-    width: 80%;
-    border-radius: 10px;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80%;
+  padding-bottom: 40px;
+  border-radius: 10px;
 }
 
-.Bob {
-    /* width: 10%;
-    height: 50%; */
+.Hello {
+  margin-left: 40px;
+  margin-right: 40px;
 }
+

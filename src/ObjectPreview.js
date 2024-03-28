@@ -27,7 +27,7 @@ function ObjectPreview({ found, objectTitle }) {
         open={openBackdrop}
         onClick={handleClose}
       >
-        <img src={item ? item.candidat : "waiting"} width="60%" alt={objectTitle}/>
+        <img src={item ? item.candidat : "waiting"} width="50%" alt={objectTitle}/>
       </Backdrop>
     </div>
   );

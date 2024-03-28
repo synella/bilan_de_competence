@@ -149,48 +149,115 @@ function Scene() {
       {/* <button className="cup" onClick={() => handleClick("cup")} style={{ display: found.some(item => item.title === "cup") ? "none" : "block" }}>
         cup
       </button> */}
-      <button className="cup" onClick={() => handleClick("cup")}>
-        cup
-      </button>
-      <button className="telephone" onClick={() => handleClick("telephone")}>
-        telephone
-      </button>
-
-      <button className="vase" onClick={() => handleClick("vase")}>
-        vase
-      </button>
-
-      <button className="wallet" onClick={() => handleClick("wallet")}>
-        wallet
-      </button>
-
-      <button className="books" onClick={() => handleClick("books")}>
-        books
-      </button>
-
-      <button className="books2" onClick={() => handleClick("books2")}>
-        books_rose
-      </button>
-
-      <button className="files" onClick={() => handleClick("files")}>
-        files
-      </button>
-
+      <img
+        src="./objects/cup.png"
+        className="cup"
+        onClick={() => handleClick("cup")}
+        alt="cup"
+      />
+      <img
+        src="./objects/telephone.png"
+        className="telephone"
+        onClick={() => handleClick("telephone")}
+        alt="telephone"
+      />
+      <img
+        src="./objects/vase.png"
+        className="vase"
+        onClick={() => handleClick("vase")}
+        alt="vase"
+      />
+      <img
+        src="./objects/wallet.png"
+        className="wallet"
+        onClick={() => handleClick("wallet")}
+        alt="wallet"
+      />
+      s
+      <img
+        src="./objects/books.png"
+        className="books"
+        onClick={() => handleClick("books")}
+        alt="books"
+      />
+      <img
+        src="./objects/books2.png"
+        className="books2"
+        onClick={() => handleClick("books2")}
+        alt="books2"
+      />
+      <img
+        src="./objects/files.png"
+        className="files"
+        onClick={() => handleClick("files")}
+        alt="files"
+      />
       <img
         src="./objects/glasses.png"
         className="glasses"
         onClick={() => handleClick("glasses")}
         alt="glasses"
       />
-
-      <button className="mug" onClick={() => handleClick("mug")}>
-        mug
-      </button>
-
-      <button className="notebook" onClick={() => handleClick("notebook")}>
-        notebook
-      </button>
-
+      <img
+        src="./objects/notebook.png"
+        className="notebook"
+        onClick={() => handleClick("notebook")}
+        alt="notebook"
+      />
+      <img
+        src="./objects/notebook2.png"
+        className="notebook2"
+        onClick={() => handleClick("notebook2")}
+        alt="notebook2"
+      />
+      <img
+        src="./objects/notebook3.png"
+        className="notebook3"
+        onClick={() => handleClick("notebook3")}
+        alt="notebook3"
+      />
+      <img
+        src="./objects/penBox.png"
+        className="penBox"
+        onClick={() => handleClick("penBox")}
+        alt="penBox"
+      />
+      <img
+        src="./objects/pencils.png"
+        className="pencils"
+        onClick={() => handleClick("pencils")}
+        alt="pencils"
+      />
+      <img
+        src="./objects/plant.png"
+        className="plant"
+        onClick={() => handleClick("plant")}
+        alt="plant"
+      />
+      <img
+        src="./objects/rug.png"
+        className="rug"
+        onClick={() => handleClick("rug")}
+        alt="rug"
+      />
+      <img
+        src="./objects/sheets.png"
+        className="sheets"
+        onClick={() => handleClick("sheets")}
+        alt="sheets"
+      />
+      <img
+        src="./objects/sheets2.png"
+        className="sheets2"
+        onClick={() => handleClick("sheets2")}
+        alt="sheets2"
+      />
+      <img
+        src="./objects/mug.png"
+        className="mug"
+        onClick={() => handleClick("mug")}
+        alt="mug"
+      />
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={openBackdropFound}
@@ -198,7 +265,6 @@ function Scene() {
         <ObjectPreview objectTitle={objectTitle} found={found} />
         <CloseIcon className="close-icon" onClick={handleClose} />
       </Backdrop>
-
       <Badge
         badgeContent={badgeContentValue}
         sx={{
@@ -210,7 +276,7 @@ function Scene() {
           <Tooltip
             open={openTooltip}
             title={
-              <span style={{ fontSize: "20px"}}>
+              <span style={{ fontSize: "20px" }}>
                 <p>
                   Je ne sais pas comment vous remercier ! N'hésitez pas à
                   revenir vers moi pour visualiser les objets à trouver ainsi
@@ -231,7 +297,6 @@ function Scene() {
           </Tooltip>
         </ClickAwayListener>
       </Badge>
-
       <Drawer open={open} onClose={toggleDrawer(false)}>
         <Objects found={found} unfound={unfound} />
       </Drawer>

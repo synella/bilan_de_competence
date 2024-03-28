@@ -99,20 +99,6 @@ function Scene() {
   const [found, setFound] = useState([]);
   const navigate = useNavigate();
 
-  
-  const LightTooltip = styled(({ className, ...props }) => (
-    <Tooltip {...props} classes={{ popper: className }} />
-  ))(({ theme }) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: theme.palette.common.white,
-      color: "rgba(0, 0, 0, 0.87)",
-      boxShadow: theme.shadows[1],
-      fontSize: 16,
-      width: "100%", // Modify the width here
-      height: "100px", // Modify the height here
-    },
-  }));
-
   useEffect(() => {
     const handleRefresh = () => {
       if (performance.navigation.type === 1) {
@@ -132,7 +118,7 @@ function Scene() {
   };
 
   const handleClose = () => {
-    setOpenBackdrop(false);
+    // setOpenBackdrop(false);
     setOpenBackdropFound(false);
   };
 
@@ -160,26 +146,6 @@ function Scene() {
 
   return (
     <div className="Scene">
-      {/* <Backdrop
-        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={openBackdrop}
-      >
-        <div className="Help">
-          <p>
-            Je ne sais pas comment vous remercier ! N'hésitez pas à revenir vers
-            moi pour visualiser les objets et leurs contenus.
-          </p>
-          <p>Je suis juste en bas à gauche. Bonne chance !</p>
-          <Button
-            variant="text"
-            className="close-help-backdrop"
-            onClick={handleClose}
-          >
-            OK
-          </Button>
-        </div>
-      </Backdrop> */}
-
       {/* <button className="cup" onClick={() => handleClick("cup")} style={{ display: found.some(item => item.title === "cup") ? "none" : "block" }}>
         cup
       </button> */}
@@ -241,16 +207,17 @@ function Scene() {
         className="bob-badge"
       >
         <ClickAwayListener onClickAway={handleCloseTooltip}>
-          <LightTooltip
+          <Tooltip
             open={openTooltip}
             title={
-              <p>
-                Je ne sais pas comment vous remercier ! N'hésitez pas à revenir
-                vers moi pour visualiser les objets à trouver ainsi que leurs
-                contenus. Bonne chance !
-              </p>
+              <span style={{ fontSize: "20px"}}>
+                <p>
+                  Je ne sais pas comment vous remercier ! N'hésitez pas à
+                  revenir vers moi pour visualiser les objets à trouver ainsi
+                  que leurs contenus. Bonne chance !
+                </p>
+              </span>
             }
-            // className="bob-tooltip"
             placement="right"
             arrow
           >
@@ -261,7 +228,7 @@ function Scene() {
               alt="arrow"
               onClick={toggleDrawer(true)}
             />
-          </LightTooltip>
+          </Tooltip>
         </ClickAwayListener>
       </Badge>
 

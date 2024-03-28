@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Scene.css";
+import Finish from "./Finish";
 import Drawer from "@mui/material/Drawer";
 import Objects from "./Objects";
 import Backdrop from "@mui/material/Backdrop";
@@ -20,74 +21,92 @@ function Scene() {
     {
       img: "./objects/books.png",
       title: "books",
+      candidat: "./candidats/achille_attentes.png"
     },
     {
       img: "./objects/books2.png",
       title: "books2",
+      candidat: ""
     },
     {
       img: "./objects/cup.png",
       title: "cup",
+      candidat: "./candidats/achille_centre.png"
     },
     {
       img: "./objects/files.png",
       title: "files",
+      candidat: ""
     },
     {
       img: "./objects/glasses.png",
       title: "glasses",
+      candidat: ""
     },
     {
       img: "./objects/penBox.png",
       title: "penBox",
+      candidat: ""
     },
     {
       img: "./objects/notebook.png",
       title: "notebook",
+      candidat: ""
     },
     {
       img: "./objects/notebook2.png",
       title: "notebook2",
+      candidat: ""
     },
     {
       img: "./objects/notebook3.png",
       title: "notebook3",
+      candidat: "./candidats/achille_itineraire.png"
     },
     {
       img: "./objects/pencils.png",
       title: "pencils",
+      candidat: ""
     },
     {
       img: "./objects/plant.png",
       title: "plant",
+      candidat: ""
     },
     {
       img: "./objects/mug.png",
       title: "mug",
+      candidat: "./candidats/achille_traits.png"
     },
     {
       img: "./objects/rug.png",
       title: "rug",
+      candidat: ""
     },
     {
       img: "./objects/sheets.png",
       title: "sheets",
+      candidat: "./candidats/achille_compe.png"
     },
     {
       img: "./objects/sheets2.png",
       title: "sheets2",
+      candidat: ""
     },
     {
       img: "./objects/telephone.png",
       title: "telephone",
+      candidat: "./candidats/achille_cv.png"
     },
     {
       img: "./objects/vase.png",
       title: "vase",
+      candidat: ""
     },
     {
       img: "./objects/wallet.png",
       title: "wallet",
+      candidat: ""
     },
   ]);
   const [found, setFound] = useState([]);
@@ -112,7 +131,6 @@ function Scene() {
   };
 
   const handleClose = () => {
-    // setOpenBackdrop(false);
     setOpenBackdropFound(false);
   };
 
@@ -140,178 +158,188 @@ function Scene() {
 
   return (
     <div className="Scene">
-      {/* <button className="cup" onClick={() => handleClick("cup")} style={{ display: found.some(item => item.title === "cup") ? "none" : "block" }}>
+
+      {unfound.length === 0 ? (
+        <Finish />
+      ) : (
+        <>
+          {/* <button className="cup" onClick={() => handleClick("cup")} style={{ display: found.some(item => item.title === "cup") ? "none" : "block" }}>
         cup
       </button> */}
-      <img
-        src="./objects/cup.png"
-        className="cup"
-        onClick={() => handleClick("cup")}
-        alt="cup"
-        draggable="false"
-      />
-      <img
-        src="./objects/telephone.png"
-        className="telephone"
-        onClick={() => handleClick("telephone")}
-        alt="telephone"
-        draggable="false"
-      />
-      <img
-        src="./objects/vase.png"
-        className="vase"
-        onClick={() => handleClick("vase")}
-        alt="vase"
-        draggable="false"
-      />
-      <img
-        src="./objects/wallet.png"
-        className="wallet"
-        onClick={() => handleClick("wallet")}
-        alt="wallet"
-        draggable="false"
-      />
-      <img
-        src="./objects/books.png"
-        className="books"
-        onClick={() => handleClick("books")}
-        alt="books"
-        draggable="false"
-      />
-      <img
-        src="./objects/books2.png"
-        className="books2"
-        onClick={() => handleClick("books2")}
-        alt="books2"
-        draggable="false"
-      />
-      <img
-        src="./objects/files.png"
-        className="files"
-        onClick={() => handleClick("files")}
-        alt="files"
-        draggable="false"
-      />
-      <img
-        src="./objects/glasses.png"
-        className="glasses"
-        onClick={() => handleClick("glasses")}
-        alt="glasses"
-        draggable="false"
-      />
-      <img
-        src="./objects/notebook.png"
-        className="notebook"
-        onClick={() => handleClick("notebook")}
-        alt="notebook"
-        draggable="false"
-      />
-      <img
-        src="./objects/notebook2.png"
-        className="notebook2"
-        onClick={() => handleClick("notebook2")}
-        alt="notebook2"
-        draggable="false"
-      />
-      <img
-        src="./objects/notebook3.png"
-        className="notebook3"
-        onClick={() => handleClick("notebook3")}
-        alt="notebook3"
-        draggable="false"
-      />
-      <img
-        src="./objects/penBox.png"
-        className="penBox"
-        onClick={() => handleClick("penBox")}
-        alt="penBox"
-        draggable="false"
-      />
-      <img
-        src="./objects/pencils.png"
-        className="pencils"
-        onClick={() => handleClick("pencils")}
-        alt="pencils"
-        draggable="false"
-      />
-      <img
-        src="./objects/plant.png"
-        className="plant"
-        onClick={() => handleClick("plant")}
-        alt="plant"
-        draggable="false"
-      />
-      <img
-        src="./objects/rug.png"
-        className="rug"
-        onClick={() => handleClick("rug")}
-        alt="rug"
-        draggable="false"
-      />
-      <img
-        src="./objects/sheets.png"
-        className="sheets"
-        onClick={() => handleClick("sheets")}
-        alt="sheets"
-        draggable="false"
-      />
-      <img
-        src="./objects/sheets2.png"
-        className="sheets2"
-        onClick={() => handleClick("sheets2")}
-        alt="sheets2"
-        draggable="false"
-      />
-      <img
-        src="./objects/mug.png"
-        className="mug"
-        onClick={() => handleClick("mug")}
-        alt="mug"
-        draggable="false"
-      />
-      <Backdrop
-        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={openBackdropFound}
-      >
-        <ObjectPreview objectTitle={objectTitle} found={found} />
-        <CloseIcon className="close-icon" onClick={handleClose} />
-      </Backdrop>
-      <Badge
-        badgeContent={badgeContentValue}
-        sx={{
-          ".MuiBadge-badge": { backgroundColor: "#f44336", color: "#ffffff" },
-        }}
-        className="bob-badge"
-      >
-        <ClickAwayListener onClickAway={handleCloseTooltip}>
-          <Tooltip
-            open={openTooltip}
-            title={
-              <span style={{ fontSize: "20px" }}>
-                <p>
-                  Je ne sais pas comment vous remercier ! N'hésitez pas à
-                  revenir vers moi pour visualiser les objets à trouver ainsi
-                  que leurs contenus. Bonne chance !
-                </p>
-              </span>
-            }
-            placement="right"
-            arrow
+          <img
+            src="./objects/cup.png"
+            className="cup"
+            onClick={() => handleClick("cup")}
+            alt="cup"
+            draggable="false"
+          />
+          <img
+            src="./objects/telephone.png"
+            className="telephone"
+            onClick={() => handleClick("telephone")}
+            alt="telephone"
+            draggable="false"
+          />
+          <img
+            src="./objects/vase.png"
+            className="vase"
+            onClick={() => handleClick("vase")}
+            alt="vase"
+            draggable="false"
+          />
+          <img
+            src="./objects/wallet.png"
+            className="wallet"
+            onClick={() => handleClick("wallet")}
+            alt="wallet"
+            draggable="false"
+          />
+          <img
+            src="./objects/books.png"
+            className="books"
+            onClick={() => handleClick("books")}
+            alt="books"
+            draggable="false"
+          />
+          <img
+            src="./objects/books2.png"
+            className="books2"
+            onClick={() => handleClick("books2")}
+            alt="books2"
+            draggable="false"
+          />
+          <img
+            src="./objects/files.png"
+            className="files"
+            onClick={() => handleClick("files")}
+            alt="files"
+            draggable="false"
+          />
+          <img
+            src="./objects/glasses.png"
+            className="glasses"
+            onClick={() => handleClick("glasses")}
+            alt="glasses"
+            draggable="false"
+          />
+          <img
+            src="./objects/notebook.png"
+            className="notebook"
+            onClick={() => handleClick("notebook")}
+            alt="notebook"
+            draggable="false"
+          />
+          <img
+            src="./objects/notebook2.png"
+            className="notebook2"
+            onClick={() => handleClick("notebook2")}
+            alt="notebook2"
+            draggable="false"
+          />
+          <img
+            src="./objects/notebook3.png"
+            className="notebook3"
+            onClick={() => handleClick("notebook3")}
+            alt="notebook3"
+            draggable="false"
+          />
+          <img
+            src="./objects/penBox.png"
+            className="penBox"
+            onClick={() => handleClick("penBox")}
+            alt="penBox"
+            draggable="false"
+          />
+          <img
+            src="./objects/pencils.png"
+            className="pencils"
+            onClick={() => handleClick("pencils")}
+            alt="pencils"
+            draggable="false"
+          />
+          <img
+            src="./objects/plant.png"
+            className="plant"
+            onClick={() => handleClick("plant")}
+            alt="plant"
+            draggable="false"
+          />
+          <img
+            src="./objects/rug.png"
+            className="rug"
+            onClick={() => handleClick("rug")}
+            alt="rug"
+            draggable="false"
+          />
+          <img
+            src="./objects/sheets.png"
+            className="sheets"
+            onClick={() => handleClick("sheets")}
+            alt="sheets"
+            draggable="false"
+          />
+          <img
+            src="./objects/sheets2.png"
+            className="sheets2"
+            onClick={() => handleClick("sheets2")}
+            alt="sheets2"
+            draggable="false"
+          />
+          <img
+            src="./objects/mug.png"
+            className="mug"
+            onClick={() => handleClick("mug")}
+            alt="mug"
+            draggable="false"
+          />
+          <Backdrop
+            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={openBackdropFound}
           >
-            <img
-              src="Bob_thoughful.png"
-              className="Bob_thoughtful"
-              width="10%"
-              alt="arrow"
-              onClick={toggleDrawer(true)}
-              draggable="false"
-            />
-          </Tooltip>
-        </ClickAwayListener>
-      </Badge>
-      <Drawer open={open} onClose={toggleDrawer(false)}>
-        <Objects found={found} unfound={unfound} />
-      </Drawer>
+            <ObjectPreview objectTitle={objectTitle} found={found} />
+            <CloseIcon className="close-icon" onClick={handleClose} />
+          </Backdrop>
+          <Badge
+            badgeContent={badgeContentValue}
+            sx={{
+              ".MuiBadge-badge": {
+                backgroundColor: "#f44336",
+                color: "#ffffff",
+              },
+            }}
+            className="bob-badge"
+          >
+            <ClickAwayListener onClickAway={handleCloseTooltip}>
+              <Tooltip
+                open={openTooltip}
+                title={
+                  <span style={{ fontSize: "20px" }}>
+                    <p>
+                      Je ne sais pas comment vous remercier ! N'hésitez pas à
+                      revenir vers moi pour visualiser les objets à trouver ainsi
+                      que leurs contenus. Bonne chance !
+                    </p>
+                  </span>
+                }
+                placement="right"
+                arrow
+              >
+                <img
+                  src="Bob_thoughful.png"
+                  className="Bob_thoughtful"
+                  width="10%"
+                  alt="arrow"
+                  onClick={toggleDrawer(true)}
+                  draggable="false"
+                />
+              </Tooltip>
+            </ClickAwayListener>
+          </Badge>
+          <Drawer open={open} onClose={toggleDrawer(false)}>
+            <Objects found={found} unfound={unfound} />
+          </Drawer>
+        </>
+      )}
     </div>
   );
 }

@@ -96,7 +96,7 @@ function Scene() {
     {
       img: "./objects/telephone.png",
       title: "telephone",
-      candidat: "./candidats/achille_cv.png",
+      candidat: "./candidats/loic_cv.png",
     },
     // {
     //   img: "./objects/vase.png",

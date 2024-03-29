@@ -18,6 +18,7 @@ function Home() {
         </div>
         <div className="Hello">
           <p>
+          {" "}
             Bonjour ! Vous tombez bien, j'ai eu un petit problème... en fait, un
             problème assez gros. Je pense avoir égaré tous les dossiers de
             candidature pour nos prochains entretiens d'embauche. Ou du moins,

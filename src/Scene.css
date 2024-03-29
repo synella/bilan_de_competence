@@ -65,10 +65,6 @@
   cursor: pointer;
 }
 
-/* .message-tootip {
-  background-color: white;
-} */
-
 .finished {
   justify-content: center;
   background-color: white;
@@ -78,8 +74,6 @@
   padding-left: 40px;
   padding-right: 40px;
   width: 30%;
-  /* width: 30%;
-  height: 20%; */
 }
 
 .cup {
@@ -87,7 +81,7 @@
   right: 40.3%;
   bottom: 37%;
   width: 4%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -96,7 +90,7 @@
   left: 13%;
   bottom: 31%;
   width: 6%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -105,7 +99,7 @@
   left: 4%;
   top: 1%;
   width: 6%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -115,7 +109,7 @@
   bottom: 22%;
   width: 6%;
   height: 15%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -125,7 +119,7 @@
   bottom: 3%;
   width: 4%;
   height: 12%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -135,7 +129,7 @@
   bottom: 35%;
   width: 7%;
   height: 6%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -145,7 +139,7 @@
   bottom: 1.5%;
   width: 5%;
   height: 10%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -155,7 +149,7 @@
   bottom: 3.5%;
   width: 7%;
   height: 8%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -165,7 +159,7 @@
   top: 15%;
   width: 3%;
   height: 6%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -175,7 +169,7 @@
   bottom: 10%;
   width: 5%;
   height: 5%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -185,7 +179,7 @@
   bottom: 22%;
   width: 7%;
   height: 9%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -195,7 +189,7 @@
   top: 26%;
   width: 7%;
   height: 9%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -204,7 +198,7 @@
   left: 36%;
   bottom: 37%;
   width: 5%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -214,7 +208,7 @@
   bottom: 2%;
   width: 5%;
   height: 5%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -223,7 +217,7 @@
   right: 17%;
   top: 29%;
   width: 5%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -233,7 +227,7 @@
   bottom: 21%;
   width: 4%;
   height: 15%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -242,7 +236,7 @@
   right: 31%;
   top: 28%;
   width: 4%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }
 
@@ -251,6 +245,6 @@
   left: 21.5%;
   top: 24%;
   width: 4%;
-  opacity: 50%;
+  opacity: 0%;
   background-color: black;
 }

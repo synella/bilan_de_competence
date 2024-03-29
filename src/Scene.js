@@ -18,96 +18,96 @@ function Scene() {
   const [objectTitle, setObjectTitle] = useState("");
   const [openBackdropFound, setOpenBackdropFound] = useState(false);
   const [unfound, setUnfound] = useState([
-    // {
-    //   img: "./objects/books.png",
-    //   title: "books",
-    //   candidat: "./candidats/achille_attentes.png",
-    // },
-    // {
-    //   img: "./objects/books2.png",
-    //   title: "books2",
-    //   candidat: "",
-    // },
+    {
+      img: "./objects/books.png",
+      title: "books",
+      candidat: "./candidats/achille_attentes.png",
+    },
+    {
+      img: "./objects/books2.png",
+      title: "books2",
+      candidat: "./candidats/loic_centre.png",
+    },
     {
       img: "./objects/cup.png",
       title: "cup",
       candidat: "./candidats/achille_centre.png",
     },
-    // {
-    //   img: "./objects/files.png",
-    //   title: "files",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/glasses.png",
-    //   title: "glasses",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/penBox.png",
-    //   title: "penBox",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/notebook.png",
-    //   title: "notebook",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/notebook2.png",
-    //   title: "notebook2",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/notebook3.png",
-    //   title: "notebook3",
-    //   candidat: "./candidats/achille_itineraire.png",
-    // },
-    // {
-    //   img: "./objects/pencils.png",
-    //   title: "pencils",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/plant.png",
-    //   title: "plant",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/mug.png",
-    //   title: "mug",
-    //   candidat: "./candidats/achille_traits.png",
-    // },
-    // {
-    //   img: "./objects/rug.png",
-    //   title: "rug",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/sheets.png",
-    //   title: "sheets",
-    //   candidat: "./candidats/achille_compe.png",
-    // },
-    // {
-    //   img: "./objects/sheets2.png",
-    //   title: "sheets2",
-    //   candidat: "",
-    // },
+    {
+      img: "./objects/files.png",
+      title: "files",
+      candidat: "./candidats/kado_centre.png",
+    },
+    {
+      img: "./objects/glasses.png",
+      title: "glasses",
+      candidat: "./candidats/kado_itineraire.png",
+    },
+    {
+      img: "./objects/penBox.png",
+      title: "penBox",
+      candidat: "./candidats/kado_traits.png",
+    },
+    {
+      img: "./objects/notebook.png",
+      title: "notebook",
+      candidat: "./candidats/loic_compe.png",
+    },
+    {
+      img: "./objects/notebook2.png",
+      title: "notebook2",
+      candidat: "./candidats/kado_attentes.png",
+    },
+    {
+      img: "./objects/notebook3.png",
+      title: "notebook3",
+      candidat: "./candidats/achille_itineraire.png",
+    },
+    {
+      img: "./objects/pencils.png",
+      title: "pencils",
+      candidat: "./candidats/loic_attentes.png",
+    },
+    {
+      img: "./objects/plant.png",
+      title: "plant",
+      candidat: "./candidats/kado_compe.png",
+    },
+    {
+      img: "./objects/mug.png",
+      title: "mug",
+      candidat: "./candidats/achille_traits.png",
+    },
+    {
+      img: "./objects/rug.png",
+      title: "rug",
+      candidat: "./candidats/loic_traits.png",
+    },
+    {
+      img: "./objects/sheets.png",
+      title: "sheets",
+      candidat: "./candidats/achille_compe.png",
+    },
+    {
+      img: "./objects/sheets2.png",
+      title: "sheets2",
+      candidat: "./candidats/loic_itineraire.png",
+    },
     {
       img: "./objects/telephone.png",
       title: "telephone",
       candidat: "./candidats/loic_cv.png",
     },
-    // {
-    //   img: "./objects/vase.png",
-    //   title: "vase",
-    //   candidat: "",
-    // },
-    // {
-    //   img: "./objects/wallet.png",
-    //   title: "wallet",
-    //   candidat: "",
-    // },
+    {
+      img: "./objects/vase.png",
+      title: "vase",
+      candidat: "./candidats/kado_cv.png",
+    },
+    {
+      img: "./objects/wallet.png",
+      title: "wallet",
+      candidat: "./candidats/achille_cv.png",
+    },
   ]);
   const [found, setFound] = useState([]);
   const [unfoundLength, setUnfoundLength] = useState(unfound.length);
@@ -193,7 +193,7 @@ function Scene() {
               : "block",
           }}
         />
-        {/* <img
+        <img
           src="./objects/vase.png"
           className="vase"
           onClick={() => handleClick("vase")}
@@ -384,13 +384,13 @@ function Scene() {
               ? "none"
               : "block",
           }}
-        /> */}
+        />
         <Backdrop
           sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
           open={openBackdropFound}
         >
           <div className="object-preview-backdrop">
-            <ObjectPreview objectTitle={objectTitle} found={found} />
+            <ObjectPreview objectTitle={objectTitle} found={found} unfound={unfound}/>
             <CloseIcon className="close-icon" onClick={handleClose} />
           </div>
         </Backdrop>
@@ -430,7 +430,7 @@ function Scene() {
           </ClickAwayListener>
         </Badge>
         <Drawer open={open} onClose={toggleDrawer(false)}>
-          <Objects found={found} unfound={unfound} />
+          <Objects found={found} unfound={unfound}/>
         </Drawer>
 
         {unfoundLength === 0 ? (
